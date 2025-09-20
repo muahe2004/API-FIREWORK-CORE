@@ -1,4 +1,4 @@
-export interface ProductType {
+export interface IProductType {
     type_id: string;
     type_code: string;
     type_name: string;

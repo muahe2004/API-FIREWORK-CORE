@@ -9,6 +9,8 @@ import userRoleRouter from './userRoleRoute';
 import branchRouter from './branchRouter';
 import departmentRouter from './departmentRouter';
 import positionRouter from './positionRouter';
+import productRouter from './productRouter';
+
 const router = Router();
 router.use('/users', userRouter);
 router.use('/function', funcRouter);
@@ -20,5 +22,6 @@ router.use('/user-role/', userRoleRouter);
 router.use('/branchs', branchRouter);
 router.use('/departments', departmentRouter);
 router.use('/positions', positionRouter);
+router.use('/products', productRouter);
 
 export default router;
