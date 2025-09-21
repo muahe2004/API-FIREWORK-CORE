@@ -96,4 +96,22 @@ export class ProductController {
       res.json({ message: error.message, success: false });
     }
   }
+
+  async checkProductCode(req: Request, res: Response): Promise<void> {
+    try {
+      const { product_code } = req.query as { product_code: string };
+
+      if (!product_code) {
+        res.status(400).json({ success: false, message: 'Vui lòng cung cấp Product Code' });
+        return;
+      }
+
+      const exists = await this.productService.checkProductCode(product_code);
+
+      res.json({ success: true, exists});
+
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  }
 }

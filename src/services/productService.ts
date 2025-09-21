@@ -30,4 +30,8 @@ export class ProductService {
   async searchProduct(pageIndex:number,pageSize:number, search_content:string, product_name:string, product_code:string): Promise<IProduct> {
     return this.productRepository.searchProduct(pageIndex,pageSize,search_content,product_name,product_code);
   }
+
+  async checkProductCode(product_code: string) {
+    return this.productRepository.checkProductCode(product_code);
+  }
 }

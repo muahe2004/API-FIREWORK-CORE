@@ -10,4 +10,5 @@ productRouter.post('/create', productController.createProduct.bind(productContro
 productRouter.post('/update', productController.updateProduct.bind(productController));
 productRouter.post('/delete', productController.deleteProduct.bind(productController));
 productRouter.post('/search', productController.searchProduct.bind(productController));
+productRouter.get('/check-code', productController.checkProductCode.bind(productController));
 export default productRouter;

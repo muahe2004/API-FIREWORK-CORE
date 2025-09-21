@@ -74,4 +74,10 @@ export class ProductRepository {
       throw new Error( error.message);
     }
   }
+
+  async checkProductCode(product_code: string): Promise<boolean> {
+    const sql = 'CALL CheckProductCode(?, @err_code, @err_msg)';
+    const [rows]: any = await this.db.query(sql, [product_code]);    
+    return rows[0]?.exists_result === 1;
+  }
 }
